@@ -8,7 +8,7 @@
                         <p class="mb-lg-4">Selalu mencuci tangan, kenakan masker, jaga jarak minimal 1 meter. Kurangi aktifitas di ruang publik, stay safe stay alive.</p>
                     </div>
                     <div class="col-md-6 text-center d-lg-flex align-items-lg-end justify-content-lg-end">
-                        <g-image src="~/assets/images/covid.png" fit="contain" width="400px"></g-image>
+                        <g-image src="~/assets/images/covid.png" fit="contain" class="covid"></g-image>
                     </div>
                 </div>
             </div>
@@ -90,3 +90,13 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+.covid {
+    @media screen and (min-width: 769px) {
+        width: 400px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 300px;
+    }
+}
+</style>
