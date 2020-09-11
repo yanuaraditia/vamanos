@@ -1,0 +1,110 @@
+// Light default theme
+$font-family-sans-serif: 'Roboto',sans-serif;
+$primary: #f3b31e;
+$light: #f5f5f7;
+$secondary: #3ddc84;
+$dark: #121212;
+$btn-border-radius: 5px;
+$btn-font-weight: 500;
+$info: #0071e3;
+$card-bg: transparent;
+$card-border-color: transparent;
+$card-border-radius: 8px;
+$breakpoint-xl: 1190px;
+body {
+	background: #fff;
+	.navbar {
+		&::after {
+			content: "";
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			background: rgba(0,0,0,0.16);
+			position: absolute;
+			height: 1px;
+		}
+	}
+}
+
+body[data-theme="dark"] {
+	background: #151515;
+	color: #fff;
+	.bg-light {
+		background: rgba($color: #fff, $alpha: .015)!important;
+	}
+	hr {
+		background: #444;
+	}
+}
+
+.navbar {
+	background: rgba(0,0,0,0.8);
+	backdrop-filter: saturate(180%) blur(20px);
+	position: fixed!important;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 11111;
+	min-height: 60px;
+	@media screen and (min-width: 1024px) {
+		&-nav {
+			width: 100%;
+		}
+	}
+	.router-link-exact-active {
+		color: $primary!important;
+	}
+}
+.main-wrapper {
+	margin-top: 60px;
+}
+.front-banner {
+}
+// Override variables for Dark theme
+.ndes {
+	&-1 {
+		@media screen and (min-width: 1024px) {
+			font-size: 52px;
+		}
+	}
+}
+.f-2 {
+	font-family: 'Playfair Display', serif!important;
+}
+.footer {
+	ul {
+		list-style: none;
+		padding: 0;
+		li:not-last-child {
+			margin-bottom: 7px;
+		}
+	}
+}
+.contact {
+    .banner {
+        @media screen and (min-width: 1024px) {
+            max-width: $breakpoint-xl;
+        }
+        @media screen and (max-width: 1023px) {
+			max-width: 80vw;
+        }
+    }
+}
+.full-radius {
+	border-radius: 10000px!important;
+}
+.bg-gray {
+	background: #171717;
+}
+.people {
+	border-color: #555!important;
+	transition: all .2s ease-in-out;
+	.card-body, .card-title {
+		text-overflow: ellipsis;
+	}
+	cursor: pointer;
+	&:hover {
+		border-color: $primary!important;
+		box-shadow: 0 0 0 2px inset $primary;
+	}
+}
