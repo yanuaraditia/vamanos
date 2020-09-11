@@ -10,6 +10,8 @@ $info: #0071e3;
 $card-bg: transparent;
 $card-border-color: transparent;
 $card-border-radius: 8px;
+$navbar-light-toggler-border-color: transparent;
+$navbar-dark-toggler-border-color: transparent;
 $breakpoint-xl: 1190px;
 body {
 	background: #fff;
@@ -49,6 +51,14 @@ body[data-theme="dark"] {
 	@media screen and (min-width: 1024px) {
 		&-nav {
 			width: 100%;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		&-nav {
+			border-top: 1px solid rgba($color: #fff, $alpha: .15);
+			li:not(:last-child) {
+				border-bottom: 1px solid rgba($color: #fff, $alpha: .15);
+			}
 		}
 	}
 	.router-link-exact-active {
