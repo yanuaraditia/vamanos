@@ -5,10 +5,9 @@
           <div class="col-12-mobile col-md-4">
             <h6>Organisasi</h6>
             <ul>
-              <li><a href="#">Struktur Organisasi</a></li>
-              <li><a href="#">Keanggotaan</a></li>
-              <li><a href="#">Layanan Bantuan</a></li>
-              <li><a href="#">Tentang Kami</a></li>
+              <li><g-link to="/struktur-organisasi">Struktur Organisasi</g-link></li>
+              <li><g-link to="/anggota">Keanggotaan</g-link></li>
+              <li><g-link to="/about">Tentang Kami</g-link></li>
             </ul>
           </div>
           <div class="col-12-mobile col-md-4">

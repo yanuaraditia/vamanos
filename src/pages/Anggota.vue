@@ -3,15 +3,15 @@
         <section class="py-5">
             <div class="container">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
-                <div class="row mt-3">
+                <div class="row mt-4">
                     <div class="col-6 col-md-4 mb-3 mb-md-4" v-for="anggota in displayedAnggota" :key="anggota.id">
-                        <div class="card people">
+                        <g-link :to="'/a/'+anggota.id" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
                                 <h4 class="card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
-                                <small class="card-text">Web Developer</small>
+                                <small class="card-text">{{anggota.major.name}}</small>
                             </div>
-                        </div>
+                        </g-link>
                     </div>
                 </div>
                 <div class="d-md-flex align-items-md-center justify-content-md-center text-wrap">
