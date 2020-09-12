@@ -4,17 +4,91 @@
             <div class="container">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
                 <div class="row mt-3">
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 mb-3 mb-md-4" v-for="anggota in displayedAnggota" :key="anggota.id">
                         <div class="card people">
                             <div class="card-body text-nowrap">
-                                <b-img src="https://dev.imaka.or.id/storage/anggota/rasyd.png" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
-                                <h4 class="card-title text-primary mt-3 mb-0 overflow-hidden">Eko Patrio Gumiwang Kartasasmita Eko patrio jos</h4>
+                                <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
+                                <h4 class="card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
                                 <small class="card-text">Web Developer</small>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="d-md-flex align-items-md-center justify-content-md-center text-wrap">
+                    <nav aria-label="Page navigation example" class="text-wrap">
+                        <ul class="pagination">
+                            <li class="page-item d-none d-md-inline" v-bind:class="page == 1 ? 'disabled' : null">
+                                <button type="button" class="page-link" @click="page--"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                            </li>
+                            <li class="page-item" v-for="pageNumber in pages" :key="pageNumber" v-bind:class="page == pageNumber ? 'active' : null">
+                                <button type="button" class="page-link" @click="page = pageNumber">{{pageNumber}}</button>
+                            </li>
+                            <li class="page-item d-none d-md-inline" v-bind:clss="page >= pages.length ? 'disabled' : null">
+                                <button type="button" class="page-link" @click="page++"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </section>
     </Layout>
 </template>
+<script>
+import axios from 'axios'
+export default {
+    data() {
+        return {
+            isLoaded: false,
+            anggotas: [],
+            page: 1,
+            perPage: 12,
+            pages: [],
+        }
+    },
+    methods: {
+        getPosts () {
+            if(localStorage.anggotas) {
+                this.anggotas = JSON.parse(localStorage.anggotas)
+                this.isLoaded = true
+            } else {
+                axios.get('https://dev.imaka.or.id/api/anggota')
+                .then(response => {
+                    localStorage.anggotas = JSON.stringify(response.data.data)
+                    this.anggotas = JSON.parse(localStorage.anggotas)
+                    this.isLoaded = true
+                })
+                .catch(response => {
+                    console.log(response);
+                });
+            }
+        },
+        setPages () {
+            let numberOfPages = Math.ceil(this.anggotas.length / this.perPage);
+            for (let index = 1; index <= numberOfPages; index++) {
+                this.pages.push(index);
+            }
+        },
+        paginate (posts) {
+            let page = this.page;
+            let perPage = this.perPage;
+            let from = (page * perPage) - perPage;
+            let to = (page * perPage);
+            return  posts.slice(from, to);
+        }
+    },
+    mounted () {
+        this.getPosts();
+    },
+    watch: {
+        anggotas () {
+        this.setPages();
+        }
+    },
+    computed: {
+        displayedAnggota () {
+            return this.paginate(this.anggotas);
+        }
+    },
+
+}
+</script>
