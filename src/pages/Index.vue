@@ -54,7 +54,7 @@
 import axios from 'axios'
 export default {
     metaInfo: {
-      title: 'Hello, world!'
+      title: 'Beranda'
     },
     data() {
         return {
