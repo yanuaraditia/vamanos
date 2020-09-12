@@ -83,7 +83,6 @@ export default {
                 }
                 this.isLoaded = true
             }).catch(e => {
-                alert('Terjadi kesalahan')
                 console.log(e)
             });
         }

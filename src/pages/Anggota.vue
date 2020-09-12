@@ -4,7 +4,7 @@
             <div class="container">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
                 <div class="row my-4 no-gutters peoples">
-                    <div class="col-12 col-md-4" v-for="anggota in displayedAnggota" :key="anggota.id">
+                    <div class="col-12 col-md-4" v-for="anggota in displayedAnggota" :key="anggota.id" @mouseover="prepAnggota(anggota)">
                         <g-link :to="'/a/'+anggota.id" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
@@ -36,6 +36,9 @@
 <script>
 import axios from 'axios'
 export default {
+    metaInfo: {
+        title: 'Anggota'
+    },
     data() {
         return {
             isLoaded: false,
