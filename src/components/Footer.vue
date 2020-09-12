@@ -13,12 +13,11 @@
           <div class="col-12-mobile col-md-4">
             <h6>Relasi</h6>
             <ul>
-              <li><a href="#">Universitas Amikom Yogyakarta</a></li>
-              <li><a href="#">Universitas Amikom Purwokerto</a></li>
-              <li><a href="#">Kebumen Campus Festival</a></li>
-              <li><a href="#">Pemerintah Kabupaten Kebumen</a></li>
-              <li><a href="#">Ikatan Mahasiswa Kebumen Amikom</a></li>
-              <li><a href="#">Senat Mahasiwa Amikom</a></li>
+              <li><a href="//home.amikom.ac.id">Universitas Amikom Yogyakarta</a></li>
+              <li><a href="//amikompurwokerto.ac.id">Universitas Amikom Purwokerto</a></li>
+              <li><a href="//instagram.com/kebumencampusfestival">Kebumen Campus Festival</a></li>
+              <li><a href="//www.kebumenkab.go.id">Pemerintah Kabupaten Kebumen</a></li>
+              <li><a href="//instagram.com/imakta">Ikatan Mahasiswa Kebumen di Yogyakarta</a></li>
             </ul>
           </div>
           <div class="col-12-mobile col-md-4">

@@ -51,6 +51,7 @@ export default {
     methods: {
         prepAnggota(data) {
             localStorage.load_anggota = JSON.stringify(data)
+            localStorage[`load_name_${data.id}`] = data.name
         },
         clickPg(type) {
             this.page = type
