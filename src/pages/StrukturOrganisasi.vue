@@ -4,7 +4,7 @@
             <div class="container">
                 <h1 class="ndes-1 f-2">Struktur Organisasi</h1>
                 <div class="row mt-4">
-                    <div class="col-6 col-md-4 mb-3 mb-md-4" v-for="anggota in penguruses" :key="anggota.id">
+                    <div class="col-12 col-md-4" v-for="anggota in penguruses" :key="anggota.id">
                         <g-link :to="'/a/'+anggota.user_id" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.user.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
