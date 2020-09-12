@@ -3,7 +3,7 @@
         <section class="py-5">
             <div class="container">
                 <h1 class="ndes-1 f-2">Struktur Organisasi</h1>
-                <div class="row mt-4">
+                <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4" v-for="anggota in penguruses" :key="anggota.id">
                         <g-link :to="'/a/'+anggota.user_id" class="card people">
                             <div class="card-body text-nowrap">

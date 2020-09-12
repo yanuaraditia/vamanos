@@ -3,7 +3,7 @@
         <section class="py-5">
             <div class="container">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
-                <div class="row mt-4">
+                <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4" v-for="anggota in displayedAnggota" :key="anggota.id">
                         <g-link :to="'/a/'+anggota.id" class="card people">
                             <div class="card-body text-nowrap">
@@ -18,13 +18,13 @@
                     <nav aria-label="Page navigation example" class="text-wrap">
                         <ul class="pagination">
                             <li class="page-item d-none d-md-inline" v-bind:class="page == 1 ? 'disabled' : null">
-                                <button type="button" class="page-link" @click="page--"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                                <button type="button" class="page-link" @click="clickPg(page--)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
                             </li>
                             <li class="page-item" v-for="pageNumber in pages" :key="pageNumber" v-bind:class="page == pageNumber ? 'active' : null">
-                                <button type="button" class="page-link" @click="page = pageNumber">{{pageNumber}}</button>
+                                <button type="button" class="page-link" @click="clickPg(pageNumber)">{{pageNumber}}</button>
                             </li>
                             <li class="page-item d-none d-md-inline" v-bind:class="page < pages.length ? null : 'disabled'">
-                                <button type="button" class="page-link" @click="page++"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+                                <button type="button" class="page-link" @click="clickPg(page++)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                             </li>
                         </ul>
                     </nav>
@@ -46,7 +46,17 @@ export default {
         }
     },
     methods: {
+        prepAnggota(data) {
+            localStorage.load_anggota = JSON.stringify(data)
+        },
+        clickPg(type) {
+            this.page = type
+            localStorage.current_page = this.page
+        },
         getPosts () {
+            if(localStorage.current_page) {
+                this.page = localStorage.current_page
+            }
             if(localStorage.anggotas) {
                 this.anggotas = JSON.parse(localStorage.anggotas)
                 this.isLoaded = true

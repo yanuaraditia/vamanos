@@ -90,13 +90,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-.covid {
-    @media screen and (min-width: 769px) {
-        width: 400px;
-    }
-    @media screen and (max-width: 768px) {
-        width: 300px;
-    }
-}
-</style>

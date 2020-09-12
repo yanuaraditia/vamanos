@@ -24,9 +24,9 @@
           <div class="col-12-mobile col-md-4">
             <h6>Tautan</h6>
             <ul>
-              <li><a href="#">Pendaftaran Mahasiswa Baru</a></li>
-              <li><a href="#">Penelusuran Minat Siswa</a></li>
-              <li><a href="#">Pendaftaram Anggota</a></li>
+              <li><a href="//pmb.amikom.ac.id">Pendaftaran Mahasiswa Baru</a></li>
+              <li><g-link to="/kuisioner">Penelusuran Minat Siswa</g-link></li>
+              <li><g-link to="/join">Pendaftaran Anggota</g-link></li>
             </ul>
           </div>
         </div>

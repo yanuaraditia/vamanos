@@ -12,6 +12,8 @@ $card-border-width: 0;
 $card-border-radius: 10px;
 $navbar-light-toggler-border-color: transparent;
 $navbar-dark-toggler-border-color: transparent;
+$btn-focus-box-shadow: none;
+$navbar-toggler-padding-x: .25rem;
 $breakpoint-xl: 1190px;
 body {
 	background: #fff;
@@ -91,7 +93,7 @@ body[data-theme="dark"] {
 		list-style: none;
 		padding: 0;
 		li:not-last-child {
-			margin-bottom: 7px;
+			margin-bottom: 10px;
 		}
 	}
 }
@@ -116,7 +118,7 @@ body[data-theme="dark"] {
 	transition: all .2s ease-in-out;
 	text-decoration: none!important;
 	color: inherit!important;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	.card-body, .card-title {
 		text-overflow: ellipsis;
 	}
@@ -125,4 +127,30 @@ body[data-theme="dark"] {
 		border-color: $primary!important;
 		box-shadow: 0 0 0 2px inset $primary;
 	}
+}
+.peoples {
+	@media screen and (min-width: 769px) {
+		.col-12:nth-child(1n+0) {
+			padding-right: 10px;
+		}
+		.col-12:nth-child(3n+0) {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		.col-12:nth-child(3n+0) {
+			padding-left: 0;
+			padding-right: 0;
+		}	
+	}
+}
+.covid {
+    @media screen and (min-width: 769px) {
+        width: 550px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 300px;
+    }
+}
+.btn:focus, button:focus {
+	outline: none!important;
 }
