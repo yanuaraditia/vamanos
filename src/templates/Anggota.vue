@@ -68,14 +68,7 @@ export default {
         }
     },
     metaInfo: {
-        title: () => {
-            if(localStorage.load_anggota) {
-                var te = JSON.parse(localStorage.load_anggota)
-                return te.name;
-            } else {
-                return 'Detail Anggota'
-            }
-        }
+        title: 'Detail Anggota'
     },
     mounted() {
         const { id } = this.$route.params
