@@ -23,7 +23,7 @@
                             <li class="page-item" v-for="pageNumber in pages" :key="pageNumber" v-bind:class="page == pageNumber ? 'active' : null">
                                 <button type="button" class="page-link" @click="page = pageNumber">{{pageNumber}}</button>
                             </li>
-                            <li class="page-item d-none d-md-inline" v-bind:clss="page >= pages.length ? 'disabled' : null">
+                            <li class="page-item d-none d-md-inline" v-bind:class="page < pages.length ? null : 'disabled'">
                                 <button type="button" class="page-link" @click="page++"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
                             </li>
                         </ul>
