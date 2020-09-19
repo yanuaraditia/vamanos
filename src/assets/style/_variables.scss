@@ -17,6 +17,9 @@ $navbar-toggler-padding-x: .25rem;
 $breakpoint-xl: 1190px;
 body {
 	background: #fff;
+	--color: #333;
+	color: var(--color);
+	--dyna-blur: rgba(0,0,0,.8);
 	.navbar {
 		&::after {
 			content: "";
@@ -33,7 +36,9 @@ body {
 
 body[data-theme="dark"] {
 	background: #151515;
-	color: #fff;
+	--dyna-blur: rgba(0,0,0,.6);
+	--color: #fff;
+	color: var(--color);
 	--card-bg: #222;
 	.bg-light {
 		background: rgba($color: #fff, $alpha: .015)!important;
@@ -46,8 +51,15 @@ body[data-theme="dark"] {
 	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
+.container-fluid {
+	@media screen and (min-width: 1280px) {
+		padding-left: 5.5rem!important;
+		padding-right: 5.5rem!important;
+	}
+}
+
 .navbar {
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.7);
 	backdrop-filter: saturate(180%) blur(20px);
 	position: fixed!important;
 	top: 0;
@@ -76,6 +88,74 @@ body[data-theme="dark"] {
 	margin-top: 60px;
 }
 .front-banner {
+	@media screen and (min-width: 1024px) {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: calc(100vh - 90px);
+		.body {
+			align-items: center;
+			display: flex;
+			flex-grow: 1;
+			flex-shrink: 0;
+			padding: 3rem 0;
+			.container {
+				flex-grow: 1;
+				flex-shrink: 1;
+			}
+		}
+		h1 {
+			font-size: 80px!important;
+		}
+	}
+	@media screen and (min-width: 1366px) {
+		img {
+			max-width: 600px;
+		}
+	}
+	.carousel {
+		border-radius: 12px;
+		overflow: hidden;
+		&-caption {
+			@media screen and (min-width: 1024px) {
+				background: var(--dyna-blur);
+				backdrop-filter: blur(20px);	
+			}
+			@media screen and (max-width: 1023px) {
+				text-align: left;
+				padding: 20px 20px 35px;
+			}
+			color: #fff;
+			$rad: 15px;
+			left: $rad;
+			right: $rad;
+			bottom: $rad;
+			border-radius: $rad;	
+		}
+		&-indicators {
+			@media screen and (min-width: 1024px) {
+				bottom: 110px;
+			}
+			@media screen and (max-width: 1023px) {
+				$rad: 15px;
+				left: $rad;
+				right: $rad;
+				bottom: 30px;
+				border-radius: $rad;
+				justify-content: left;
+				margin: 0;
+				padding: 0 20px;
+			}
+			li {
+				outline: none!important;
+				width: 10px;
+				height: 10px;
+				border-radius: 100px;
+				border: none;
+			}
+		}
+	}
 }
 // Override variables for Dark theme
 .ndes {
@@ -92,8 +172,13 @@ body[data-theme="dark"] {
 	ul {
 		list-style: none;
 		padding: 0;
-		li:not-last-child {
-			margin-bottom: 10px;
+		li:not(:last-child) {
+			@media screen and (min-width: 992px) {
+				margin-bottom: 10px;
+			}
+			@media screen and (max-width: 991px) {
+				margin-bottom: 5px;
+			}
 		}
 	}
 }
@@ -129,18 +214,23 @@ body[data-theme="dark"] {
 	}
 }
 .peoples {
-	@media screen and (min-width: 769px) {
+	@media screen and (min-width: 769px) and (max-width: 1366px){
 		.col-12:nth-child(1n+0) {
 			padding-right: 10px;
 		}
 		.col-12:nth-child(3n+0) {
-			padding-left: 5px;
-			padding-right: 5px;
-		}
-		.col-12:nth-child(3n+0) {
-			padding-left: 0;
 			padding-right: 0;
-		}	
+			padding-left: 0;
+		}
+	}
+	@media screen and (min-width: 1367px){
+		.col-12:nth-child(1n+0) {
+			padding-right: 10px;
+		}
+		.col-12:nth-child(4n+0) {
+			padding-right: 0;
+			padding-left: 0;
+		}
 	}
 }
 ::-webkit-scrollbar {

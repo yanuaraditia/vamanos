@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <section class="py-5">
-            <div class="container my-lg-4" v-if="isLoaded">
+            <div class="container-fluid my-lg-4" v-if="isLoaded">
                 <b-img :src="anggota.image_link" class="full-radius"></b-img>
                 <h1 class="ndes-1 f-2 mt-2">{{anggota.name}}</h1>
                 <hr>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container my-lg-4" v-else>
+            <div class="container-fluid my-lg-4" v-else>
                 <b-spinner label="Loading..."></b-spinner>
                 <h1 class="ndes-1 f-2 mt-2"><b-spinner label="Loading..."></b-spinner><b-spinner label="Loading..."></b-spinner><b-spinner label="Loading..."></b-spinner></h1>
                 <hr>

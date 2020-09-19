@@ -1,9 +1,9 @@
 <template>
     <Layout contact="true">
         <section class="py-5">
-            <div class="container" v-if="monthEr">
+            <div class="container-fluid" v-if="monthEr">
             </div>
-            <div class="container my-lg-5">
+            <div class="container-fluid my-lg-5">
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="ndes-1 f-2">Penelusuran Minat Siswa sedang ditutup untuk sementara</h1>

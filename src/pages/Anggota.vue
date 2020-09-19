@@ -1,14 +1,14 @@
 <template>
     <Layout>
         <section class="py-5">
-            <div class="container">
+            <div class="container-fluid">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
                 <div class="row my-4 no-gutters peoples">
-                    <div class="col-12 col-md-4" v-for="anggota in displayedAnggota" :key="anggota.id" @mouseover="prepAnggota(anggota)">
+                    <div class="col-12 col-md-4 col-xl-3" v-for="anggota in displayedAnggota" :key="anggota.id" @mouseover="prepAnggota(anggota)">
                         <g-link :to="'/a/'+anggota.id" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
-                                <h4 class="card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
+                                <h4 class="card-title f-2 text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
                                 <small class="card-text">{{anggota.major.name}}</small>
                             </div>
                         </g-link>

@@ -1,14 +1,14 @@
 <template>
     <Layout>
         <section class="py-5">
-            <div class="container">
+            <div class="container-fluid">
                 <h1 class="ndes-1 f-2">Struktur Organisasi</h1>
                 <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4" v-for="anggota in penguruses" :key="anggota.id">
                         <g-link :to="'/a/'+anggota.user_id" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.user.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
-                                <h4 class="card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.user.name}}</h4>
+                                <h4 class="f-2 card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.user.name}}</h4>
                                 <small class="card-text">{{anggota.name}}</small>
                             </div>
                         </g-link>

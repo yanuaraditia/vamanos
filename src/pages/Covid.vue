@@ -1,7 +1,7 @@
 <template>
     <Layout>
         <section class="pt-5">
-            <div class="container pt-lg-5">
+            <div class="container-fluid pt-lg-5">
                 <div class="row">
                     <div class="col-md-6 pb-lg-5">
                         <h1 class="ndes-1 f-2"><span class="text-danger">{{caseTotal}}</span> kasus positif di sekitar kita, patuhi selalu protokol kesehatan.</h1>
