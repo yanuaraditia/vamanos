@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h1 class="ndes-1 f-2">Penelusuran Minat Siswa sedang ditutup untuk sementara</h1>
-                        <p>Kuisioner akan dibuka kembali pada periode bulan November - Januari tahun berikutnya. Otomatis aktif setiap jadwal Sosialisasi Kampus Universitas Amikom Yogyakarta.</p>
+                        <p>Kuisioner akan dibuka kembali pada periode bulan November - Januari setiap fase akhir hingga awal tahun. Otomatis aktif setiap jadwal Sosialisasi Kampus Universitas Amikom Yogyakarta.</p>
                     </div>
                 </div>
             </div>
