@@ -20,13 +20,13 @@
                 </div>
             </div>
         </section>
-        <section class="pt-5 bg-light">
-            <div class="container-fluid pt-lg-5">
+        <section class="py-5 bg-light">
+            <div class="container-fluid py-5">
                 <div class="row">
-                    <div class="col-md-6 pb-lg-5">
-                        <h1 class="ndes-1 f-2">Jaga selalu kesehatanmu, ada mimpi yang harus kau kejar</h1>
-                        <p>Selalu mencuci tangan, kenakan masker, jaga jarak minimal 1 meter. Kurangi aktifitas di ruang publik, stay safe stay alive.</p>
-                        <div class="row my-md-5">
+                    <div class="col-md-8 pl-lg-5 my-md-auto">
+                        <h1 class="ndes-1 f-2">Jaga selalu kesehatanmu,<br> ada impian yang harus kau kejar</h1>
+                        <p>Selalu mencuci tangan, kenakan masker, taati selalu protokol kesehatan. Kurangi aktifitas di ruang publik, terapkan pola hidup sehat.</p>
+                        <div class="row mt-md-5">
                           <div class="col-md-6 col-12">
                               <h6 class="m-0">Jawa Tengah</h6>
                               <h1 class="ndes-1 f-2 text-muted">
@@ -47,7 +47,7 @@
                           </div>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center d-lg-flex align-items-lg-end justify-content-lg-end">
+                    <div class="col-md-4 text-center d-lg-flex align-items-lg-center">
                         <g-image src="~/assets/images/covid.png" fit="contain" class="covid"></g-image>
                     </div>
                 </div>
