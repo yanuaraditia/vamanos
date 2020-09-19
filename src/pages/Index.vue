@@ -8,7 +8,7 @@
                         <div class="col-md-4">
                             <Carousel></Carousel>
                         </div>
-                        <div class="col-md-8 align-items-lg-center my-auto pl-xl-5">
+                        <div class="col-md-8 align-items-lg-center my-auto pl-xl-5 mt-5 mt-md-0">
                             <h1 class="ndes-1 f-2">Ra usah isin maning dadi wong ngomong ngapak</h1>
                             <p class="mt-3">Kami merangkul dan menghubungkan mahasiswa kebumen yang berkuliah di lingkup amikom yogyakarta.</p>
                             <div class="text-left mt-md-4">
