@@ -1,6 +1,7 @@
 <template>
     <b-carousel
       id="carousel-1"
+      fade
       v-model="slide"
       :interval="4000"
       indicators
