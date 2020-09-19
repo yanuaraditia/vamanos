@@ -118,10 +118,8 @@ body[data-theme="dark"] {
 		border-radius: 12px;
 		overflow: hidden;
 		&-caption {
-			@media screen and (min-width: 1024px) {
-				background: var(--dyna-blur);
-				backdrop-filter: blur(20px);	
-			}
+			background: var(--dyna-blur);
+			backdrop-filter: blur(20px);
 			@media screen and (max-width: 1023px) {
 				text-align: left;
 				padding: 20px 20px 35px;
