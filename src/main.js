@@ -9,7 +9,7 @@ import { BootstrapVue } from 'bootstrap-vue'
 export default function (Vue, { router, head, isClient }) {
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap'
+    href: 'https://fonts.googleapis.com/css?family=Google+Sans:400,500,500italic,700|Roboto:400,400italic,500,500italic,700,700italic'
   })
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)

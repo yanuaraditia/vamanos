@@ -61,6 +61,8 @@ body[data-theme="dark"] {
 .navbar {
 	background: rgba(0,0,0,0.7);
 	backdrop-filter: saturate(180%) blur(20px);
+	font-family: 'Google Sans', sans-serif;
+	font-weight: 500;
 	position: fixed!important;
 	top: 0;
 	left: 0;
@@ -164,7 +166,7 @@ body[data-theme="dark"] {
 	}
 }
 .f-2 {
-	font-family: 'Playfair Display', serif!important;
+	font-family: 'Google Sans', serif!important;
 }
 .footer {
 	ul {
@@ -217,7 +219,7 @@ body[data-theme="dark"] {
 			padding-right: 10px;
 		}
 		.col-12:nth-child(3n+0) {
-			padding-right: 0;
+			padding-right: 10px;
 			padding-left: 0;
 		}
 	}
@@ -236,7 +238,7 @@ body[data-theme="dark"] {
 }
 .covid {
     @media screen and (min-width: 769px) {
-        width: 550px;
+        width: 350px;
     }
     @media screen and (max-width: 768px) {
         width: 300px;

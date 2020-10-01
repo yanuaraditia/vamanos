@@ -9,7 +9,7 @@
                             <Carousel></Carousel>
                         </div>
                         <div class="col-md-8 align-items-lg-center my-auto pl-xl-5 pt-5 pt-md-0">
-                            <h1 class="ndes-1 f-2">Ra usah isin maning dadi wong ngomong ngapak</h1>
+                            <h1 class="ndes-1 f-2">Ngapak bareng guyub bareng</h1>
                             <p class="mt-3">Kami merangkul dan menghubungkan mahasiswa kebumen yang berkuliah di lingkup amikom yogyakarta.</p>
                             <div class="text-left mt-md-4">
                             <g-link to="/join" class="btn btn-lg btn-primary full-radius px-lg-5">Yuh Melu</g-link>
@@ -46,9 +46,6 @@
                               </h1>
                           </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 text-center d-lg-flex align-items-lg-center">
-                        <g-image src="~/assets/images/covid.png" fit="contain" class="covid"></g-image>
                     </div>
                 </div>
             </div>

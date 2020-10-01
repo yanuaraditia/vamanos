@@ -4,8 +4,8 @@
             <div class="container-fluid">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
                 <div class="row my-4 no-gutters peoples">
-                    <div class="col-12 col-md-4 col-xl-3" v-for="anggota in displayedAnggota" :key="anggota.id" @mouseover="prepAnggota(anggota)">
-                        <g-link :to="'/a/'+anggota.id" class="card people">
+                    <div class="col-12 col-md-4 col-xl-3" v-for="(anggota, i) in displayedAnggota" :key="`${new Date().now}${i}`" @mouseover="prepAnggota(anggota)">
+                        <g-link :to="`/a/${anggota.id}`" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
                                 <h4 class="card-title f-2 text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
@@ -20,7 +20,7 @@
                             <li class="page-item d-none d-md-inline" v-bind:class="page == 1 ? 'disabled' : null">
                                 <button type="button" class="page-link" @click="clickPg(page--)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
                             </li>
-                            <li class="page-item" v-for="pageNumber in pages" :key="pageNumber" v-bind:class="page == pageNumber ? 'active' : null">
+                            <li class="page-item" v-for="pageNumber in pages" :key="'page-'+pageNumber" v-bind:class="page == pageNumber ? 'active' : null">
                                 <button type="button" class="page-link" @click="clickPg(pageNumber)">{{pageNumber}}</button>
                             </li>
                             <li class="page-item d-none d-md-inline" v-bind:class="page < pages.length ? null : 'disabled'">
@@ -57,26 +57,26 @@ export default {
             this.page = type
             localStorage.current_page = this.page
         },
-        getPosts () {
+        async getPosts () {
             if(localStorage.current_page) {
                 this.page = localStorage.current_page
             }
             if(localStorage.anggotas) {
                 this.anggotas = JSON.parse(localStorage.anggotas)
                 this.isLoaded = true
-            } else {
-                axios.get('https://dev.imaka.or.id/api/anggota')
-                .then(response => {
-                    localStorage.anggotas = JSON.stringify(response.data.data)
-                    this.anggotas = JSON.parse(localStorage.anggotas)
-                    this.isLoaded = true
-                })
-                .catch(response => {
-                    console.log(response);
-                });
             }
+            await axios.get('https://dev.imaka.or.id/api/anggota')
+            .then(response => {
+                localStorage.anggotas = JSON.stringify(response.data.data)
+                this.anggotas = response.data.data
+                this.isLoaded = true
+            })
+            .catch(response => {
+                console.log(response);
+            });
         },
         setPages () {
+            this.pages = []
             let numberOfPages = Math.ceil(this.anggotas.length / this.perPage);
             for (let index = 1; index <= numberOfPages; index++) {
                 this.pages.push(index);
@@ -95,7 +95,7 @@ export default {
     },
     watch: {
         anggotas () {
-        this.setPages();
+            this.setPages();
         }
     },
     computed: {

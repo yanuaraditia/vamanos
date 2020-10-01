@@ -64,26 +64,33 @@ export default {
     data() {
         return {
             isLoaded: false,
-            anggota: []
+            anggota: null,
         }
     },
     metaInfo: {
         title: 'Detail Anggota'
     },
-    mounted() {
-        const { id } = this.$route.params
-        if(localStorage.load_anggota) {
-            var te = JSON.parse(localStorage.load_anggota)
-            if(te.id == id) {
-                this.anggota = te
+    methods: {
+        async getUser() {
+            const { id } = this.$route.params
+            if(localStorage[`a_${id}`]) {
+                var te = JSON.parse(localStorage[`a_${id}`])
+                if(te.id == id) {
+                    this.anggota = te
+                }
+                this.isLoaded = true
             }
+            await axios.get(`https://dev.imaka.or.id/api/anggota/${id}`)
+            .then(res => {
+                localStorage[`a_${id}`] = JSON.stringify(res.data.data)
+                this.anggota = res.data.data
+                    this.isLoaded =true
+            })
+            .catch(err => console.log(err))
         }
-        axios.get(`https://dev.imaka.or.id/api/anggota/${id}`)
-        .then(res => {
-            this.anggota = res.data.data
-                this.isLoaded =true
-        })
-        .catch(err => console.log(err))
+    },
+    mounted() {
+        this.getUser()
     },
 }
 </script>

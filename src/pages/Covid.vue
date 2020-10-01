@@ -4,7 +4,7 @@
             <div class="container-fluid py-lg-5">
                 <div class="row">
                     <div class="col-md-7 pb-lg-5 my-md-auto">
-                        <h1 class="ndes-1 f-2">Total <span class="badge badge-danger text-dark">{{caseTotal}}</span> kasus positif di sekitar kita, <br>patuhi selalu protokol kesehatan.</h1>
+                        <h1 class="ndes-1 f-2">Total <span class="badge badge-danger text-dark">{{caseTotal}}</span> kasus positif di sekitar kita, patuhi selalu protokol kesehatan.</h1>
                         <p class="mb-lg-4">Selalu mencuci tangan, kenakan masker, jaga jarak minimal 1 meter. Kurangi aktifitas di ruang publik, stay safe stay alive.</p>
                     </div>
                     <div class="col-md-5 text-center d-lg-flex align-items-lg-center">
