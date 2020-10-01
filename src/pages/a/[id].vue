@@ -77,12 +77,14 @@ export default {
                 var te = JSON.parse(localStorage[`a_${id}`])
                 this.anggota = te
                 this.isLoaded = true
+                console.clear()
             }
             await axios.get(`https://dev.imaka.or.id/api/anggota/${id}`)
             .then(res => {
                 localStorage[`a_${id}`] = JSON.stringify(res.data.data)
                 this.anggota = res.data.data
                 this.isLoaded =true
+                console.clear()
             })
             .catch(err => console.log(err))
         }
