@@ -10,7 +10,23 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
   })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
-}
+  api.createManagedPages(async ({ createRoute }) => {
+    const custPage = createRoute({
+      path: '/a/:id(\\d+)/',
+      component: './src/pages/a/[id].vue'
+    });
+
+    const axios = require('axios')
+    await axios.get('https://dev.imaka.or.id/api/anggota')
+    .then(item => {
+      this.anggota = item.data.data
+      this.anggota.forEach(function(item) {
+        custPage.addPage({
+          path: `/a/${item.id}/`,
+          context: {
+            data : item,
+          }
+        })
+      });
+    });
+  });}
