@@ -34,7 +34,7 @@
             onSlideEnd(slide) {
                 this.sliding = false
             },
-            loadPengurus() {
+            async loadPengurus() {
                 if(localStorage.penguruses) {
                     this.penguruses = JSON.parse(localStorage.penguruses)
                     this.isLoaded = true
