@@ -33,6 +33,9 @@
 <script>
 import axios from 'axios'
 export default {
+    metaInfo: {
+        title: 'Covid-19 Info'
+    },
     data() {
         return {
             isLoaded: false,

@@ -75,16 +75,14 @@ export default {
             const { id } = this.$route.params
             if(localStorage[`a_${id}`]) {
                 var te = JSON.parse(localStorage[`a_${id}`])
-                if(te.id == id) {
-                    this.anggota = te
-                }
+                this.anggota = te
                 this.isLoaded = true
             }
             await axios.get(`https://dev.imaka.or.id/api/anggota/${id}`)
             .then(res => {
                 localStorage[`a_${id}`] = JSON.stringify(res.data.data)
                 this.anggota = res.data.data
-                    this.isLoaded =true
+                this.isLoaded =true
             })
             .catch(err => console.log(err))
         }
